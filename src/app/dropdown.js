@@ -15,9 +15,12 @@ var Dropdown = React.createClass({
     return(<option key={i}>{text} </option>);
 
   },
+  selectChange(){
+    console.log("select change")
+  },
   render() {
 
-    return ( <select>{this.state.arrOptions.map(this.eachOption)}</select>);
+    return ( <select onChange={this.selectChange}>{this.state.arrOptions.map(this.eachOption)}</select>);
   }
 
 }); module.exports = Dropdown;
