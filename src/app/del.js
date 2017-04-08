@@ -15,20 +15,27 @@ var Del = React.createClass({
     render() {
 
         return (
-          <div className="well bs-component">
-            <div className="row col-lg-7 bottom">
 
-                <div className="col-sm-2">
-                  <h3>{this.props.del}</h3>
-                </div>
+          <table className="table table-striped table-hover ">
+            <thead>
+              <tr>
+                <th>Del:</th>
+                <th>Typ:</th>
+                <th>Antal:</th>
+                <th>Annat:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{this.props.del}</td>
+                <td><Dropdown arrOptions={this.state.typer}/></td>
+                <td>  <input></input></td>
+                <td>Hejhej</td>
+              </tr>
+            </tbody>
+          </table>
 
-              <div className="col-sm-2">
-                <label>Del:</label>
-                <Dropdown arrOptions={this.state.typer}/>
-              </div>
 
-            </div>
-          </div>
         );
 
     }

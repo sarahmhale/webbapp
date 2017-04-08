@@ -8,7 +8,7 @@ require('../css/index.css');
 var Layout= React.createClass( {
     render() {
         return (
-            <div>
+            <div className="container">
                 <Del del="Tak"></Del>
             </div>
         );
