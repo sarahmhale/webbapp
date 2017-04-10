@@ -1,9 +1,14 @@
 import React from 'react';
-var Dropdown = React.createClass({
-    getInitialState() {
-        console.log(this.props.arrOptions)
-        return ({open: false, value: null, arrOptions: this.props.arrOptions.typer})
-    },
+class Dropdown extends React.Component{
+
+  constructor(props){
+    super(props);
+
+    this.state={currentOption: 'null', arrOptions: this.props.arrOptions.typer
+
+    }
+
+  }
 
     eachOption(text, i) {
 
@@ -12,17 +17,19 @@ var Dropdown = React.createClass({
             </option>
         );
 
-    },
+    }
     selectChange() {
-        console.log(this.refs.optionSelector.value)
-
-    },
+    
+        this.props.myFunc(this.refs.optionSelector.value);
+    }
     render() {
 
         return (
-            <select ref="optionSelector" onChange={(e) => {this.selectChange();}}>{this.state.arrOptions.map(this.eachOption)}</select>
+            <select ref="optionSelector" onChange={(e) => {
+                this.selectChange();
+            }}>{this.state.arrOptions.map(this.eachOption)}</select>
         );
     }
 
-});
+}
 module.exports = Dropdown;

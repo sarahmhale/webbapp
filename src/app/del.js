@@ -2,14 +2,21 @@ import React from 'react';
 require('../css/del.css');
 import Dropdown from './dropdown';
 //Creates a Del component
-var Del = React.createClass({
-    getInitialState() {
-        return {
-            typer: this.props.takOptions}
+class Del extends React.Component{
+  constructor(props){
+    super(props);
 
-
-    },
-
+    this.state={typer: this.props.takOptions}
+  }
+    // getInitialState() {
+    //     return {
+    //         typer: this.props.takOptions}
+    //
+    //
+    // }
+  updateComponent(text){
+      console.log('updating'+text)
+    }
     render() {
         return (
           <table className="table table-striped table-hover ">
@@ -24,7 +31,7 @@ var Del = React.createClass({
             <tbody>
               <tr>
                 <td>{this.props.takOptions.del}</td>
-                <td><Dropdown arrOptions={this.state.typer}/></td>
+                <td><Dropdown arrOptions={this.state.typer} myFunc={this.updateComponent.bind(this)}/></td>
                 <td><label></label><input></input></td>
                 <td></td>
               </tr>
@@ -35,5 +42,5 @@ var Del = React.createClass({
         );
 
     }
-});
+}
 module.exports = Del;
