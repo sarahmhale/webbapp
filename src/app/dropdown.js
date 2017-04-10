@@ -1,26 +1,28 @@
 import React from 'react';
 var Dropdown = React.createClass({
-  getInitialState() {
-    console.log(this.props.arrOptions)
-    return ({
-      open: false,
-      arrOptions:this.props.arrOptions
+    getInitialState() {
+        console.log(this.props.arrOptions)
+        return ({open: false, value: null, arrOptions: this.props.arrOptions.typer})
+    },
 
+    eachOption(text, i) {
 
+        return (
+            <option key={i} value={text}>{text}
+            </option>
+        );
 
-    })
-  },
+    },
+    selectChange() {
+        console.log(this.refs.optionSelector.value)
 
-  eachOption(text, i){
-    return(<option key={i}>{text} </option>);
+    },
+    render() {
 
-  },
-  selectChange(){
-    console.log("select change")
-  },
-  render() {
+        return (
+            <select ref="optionSelector" onChange={(e) => {this.selectChange();}}>{this.state.arrOptions.map(this.eachOption)}</select>
+        );
+    }
 
-    return ( <select onChange={this.selectChange}>{this.state.arrOptions.map(this.eachOption)}</select>);
-  }
-
-}); module.exports = Dropdown;
+});
+module.exports = Dropdown;

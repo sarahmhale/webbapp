@@ -5,32 +5,28 @@ import Dropdown from './dropdown';
 var Del = React.createClass({
     getInitialState() {
         return {
-            typer: ['hus', 'hem', 'balkong']
-        }
-    },
-    eachDel(text){
-      return(<h1>{text}</h1>)
+            typer: this.props.takOptions}
+
 
     },
+
     render() {
-
         return (
-
           <table className="table table-striped table-hover ">
             <thead>
               <tr>
                 <th>Del:</th>
                 <th>Typ:</th>
                 <th>Antal:</th>
-                <th>Annat:</th>
+                <th>Enhet:</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>{this.props.del}</td>
+                <td>{this.props.takOptions.del}</td>
                 <td><Dropdown arrOptions={this.state.typer}/></td>
-                <td>  <input></input></td>
-                <td>Hejhej</td>
+                <td><label></label><input></input></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
