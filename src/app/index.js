@@ -14,7 +14,8 @@ var Layout = React.createClass({
                 typer: [
                     'hus', 'hem'
                 ],
-                hus: ['enhet', 'mat']
+                hus: ['enhet', 'mat'],
+                hem:['enhet','mat']
             }
         }
     },

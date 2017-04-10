@@ -19,7 +19,6 @@ class Dropdown extends React.Component{
 
     }
     selectChange() {
-    
         this.props.myFunc(this.refs.optionSelector.value);
     }
     render() {
